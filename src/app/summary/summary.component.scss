@@ -1,23 +1,29 @@
 @import "../../styles/theme";
+@import "../../styles/responsive";
 
 main {
-    border-radius: 1.5rem;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 41rem;
     box-shadow: 0 10px 30px 10px $neutral800;
+    grid-template-columns: 1fr;
+    min-height: 100dvh;
+    width: 100vw;
+    border-radius: 0;
 
     section {
         border-radius: inherit;
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding: 2rem 2.25rem;
+        padding: 2rem 1rem;
 
         h2 {
             font-size: 1.25rem;
             font-weight: 800;
+        }
+
+        @include responsive(md) {
+            padding: 2rem 2.25rem;
         }
 
         &:first-of-type {
@@ -25,7 +31,13 @@ main {
             color: $neutral500;
             align-items: center;
             text-align: center;
-            padding: 2rem 3rem 3rem;
+            border-radius: 0 0 2rem 2rem;
+            padding: 2rem 1rem;
+
+            @include responsive(md) {
+                border-radius: inherit;
+                padding: 2rem 3rem 3rem;
+            }
 
             h1 {
                 color: $neutral;
@@ -62,13 +74,29 @@ main {
         }
 
         button {
-            background-color: $neutral200;
+            background: $neutral200;
             color: $neutral800;
             padding: 1rem;
             border-radius: 100vmax;
             font-size: 1rem;
-            margin-top: auto;
             font-weight: 800;
+            cursor: pointer;
+            margin-top: 1rem;
+
+            &:hover {
+                background: $gradientLight;
+            }
+
+            @include responsive(md) {
+                margin-top: auto;
+            }
         }
+    }
+
+    @include responsive(md) {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 1.5rem;
+        min-height: auto;
+        max-width: 41rem;
     }
 }
