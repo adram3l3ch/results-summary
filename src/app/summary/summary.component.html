@@ -1,0 +1,20 @@
+<main>
+    <section>
+        <h2>Your Result</h2>
+        <div class="score">
+            <span>76</span>
+            of 100
+        </div>
+        <h1>Great</h1>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </section>
+    <section>
+        <h2>Summary</h2>
+        <div class="data">
+            @for (data of summary; track data.title) {
+            <app-summary-card [data]="data" />
+            }
+        </div>
+        <button>Continue</button>
+    </section>
+</main>

@@ -1,16 +1,15 @@
 import { Component } from "@angular/core";
-import { SummaryCardComponent } from "./summary-card/summary-card.component";
-import { Data } from "./summary-card/summary-card.schema";
-import { SummaryComponent } from "./summary/summary.component";
+import { Data } from "../summary-card/summary-card.schema";
+import { SummaryCardComponent } from "../summary-card/summary-card.component";
 
 @Component({
-    selector: "app-root",
+    selector: "app-summary",
     standalone: true,
-    imports: [SummaryCardComponent, SummaryComponent],
-    templateUrl: "./app.component.html",
-    styleUrl: "./app.component.scss",
+    imports: [SummaryCardComponent],
+    templateUrl: "./summary.component.html",
+    styleUrl: "./summary.component.scss",
 })
-export class AppComponent {
+export class SummaryComponent {
     readonly summary: Data[] = [
         {
             accent: "hsl(0, 100%, 67%)",
@@ -34,7 +33,7 @@ export class AppComponent {
             accent: "hsl(234, 85%, 45%)",
             title: "Visual",
             icon: "icon-visual.svg",
-            value: 80,
+            value: 72,
         },
     ];
 }
